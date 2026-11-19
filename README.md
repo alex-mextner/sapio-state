@@ -41,3 +41,7 @@ The computing layer references [Agent OS](https://agentos-bible.vercel.app/) and
 ## Status
 
 Early concept. The repository is intended to make assumptions explicit and testable before any institutional claim is made.
+
+## Private-topology check
+
+CI runs `scripts/check-private-topology.sh` (plus gitleaks) on every pull request to keep private addresses, host names, MAC addresses and e-mails out of tracked files; use placeholders such as `<server-lan-ip>` or `<tailnet-host>` instead. To also catch your own machine names locally, list one regular expression per line in `~/.config/private-topology/denylist.txt` (never committed) and run the script before pushing.
